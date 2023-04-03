@@ -33,10 +33,10 @@ function App() {
     <div className="App">
       <form onSubmit={handleInput}>
         <label htmlFor="id">Input item id</label>
-        <br />
+        <br/>
         <input type="text" id="id"/>
         <input type="submit" />
-        <br /><br /><br />
+        <br/><br/><br/>
       </form>
 
       <button onClick={() => handleButtonClick("brands")}>Brands</button>
