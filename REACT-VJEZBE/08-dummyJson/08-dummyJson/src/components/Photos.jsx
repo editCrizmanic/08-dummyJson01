@@ -13,4 +13,9 @@ const Photos = ({ data, activePage }) => {
   );
 };
 
+Photos.propTypes = {
+  id: PropTypes.number,
+  title: PropTypes.string,
+}
+
 export default Photos;

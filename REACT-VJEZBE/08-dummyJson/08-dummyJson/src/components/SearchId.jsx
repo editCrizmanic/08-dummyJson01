@@ -18,4 +18,11 @@ const SearchId = ({ id, setInput }) => {
   );
 };
 
+SearchId.propTypes = {
+  id: PropTypes.number,
+  title: PropTypes.string,
+  brand: PropTypes.string,
+  category: PropTypes.string
+}
+
 export default SearchId;

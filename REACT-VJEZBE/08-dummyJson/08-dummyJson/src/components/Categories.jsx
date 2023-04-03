@@ -13,4 +13,8 @@ const Categories = ({ data, activePage }) => {
   )
 }
 
+Categories.propTypes = {
+  category: PropTypes.string
+}
+
 export default Categories

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 const Brands = ({ data, activePage }) => {
   const uniqueData = Array.from(new Set(data.map((item) => item.brand)))
 
@@ -12,5 +14,9 @@ const Brands = ({ data, activePage }) => {
     </>
   );
 };
+
+Brands.propTypes = {
+  brand: PropTypes.string
+}
 
 export default Brands;
