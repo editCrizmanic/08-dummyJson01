@@ -1,18 +1,10 @@
-import { useState, useEffect } from "react";
-
 const SearchId = ({ id, setInput }) => {
-  const [searchId, setSearchId] = useState([]);
 
-  useEffect(() => {
-    fetch(`https://dummyjson.com/products/${id}`)
-      .then((res) => res.json())
-      .then((json) => setSearchId([json]));
-  }, [id]);
 
   return (
     <>
-      {searchId.length > 0 &&
-        searchId.map(({id, title, brand, category, thumbnail}) => (
+      {id.length > 0 &&
+        id.map(({id, title, brand, category, thumbnail}) => (
           <div key={id}>
             <h2>Title: {title}</h2>
             <h2>Brand: {brand}</h2>

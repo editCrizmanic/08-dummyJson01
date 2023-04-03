@@ -9,12 +9,19 @@ function App() {
   const [data, setData] = useState([])
   const [input, setInput] = useState()
   const [activePage, setActivePage] = useState([])
+  const [searchId, setSearchId] = useState([]);
 
   useEffect(() => {
     fetch('https://dummyjson.com/products')
       .then(res => res.json())
       .then(data => setData(data.products))     
   },[])
+
+  useEffect(() => {
+    fetch(`https://dummyjson.com/products/${input}`)
+      .then((res) => res.json())
+      .then((json) => setSearchId([json]));
+  }, [input]);
 
   const handleButtonClick = (componentName) => {
     if (activePage.includes(componentName)) {
@@ -47,7 +54,7 @@ function App() {
       {activePage.includes("categories") && <Categories data={data} activePage={activePage} />}
       {activePage.includes("photos") && <Photos data={data} activePage={activePage}/>}
 
-      {input && <SearchId data ={data} id={input} setInput={setInput} />}
+      {input && <SearchId data ={data} id={searchId} setInput={setInput} />}
     </div>
   )
 }
